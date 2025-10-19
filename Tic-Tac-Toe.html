@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Setup */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9; /* slate-100 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 16px;
+            box-sizing: border-box;
+        }
+
+        /* Main Game Container */
+        main {
+            background-color: white;
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            max-width: 448px;
+            box-sizing: border-box;
+        }
+
+        /* Game Title */
+        h1 {
+            font-size: 2.25rem; /* 36px */
+            font-weight: 700;
+            text-align: center;
+            color: #1e293b; /* slate-800 */
+            margin-top: 0;
+            margin-bottom: 24px;
+        }
+
+        /* Player Information Section */
+        .player-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+            gap: 16px;
+        }
+
+        .player-card {
+            width: 50%;
+            text-align: center;
+            padding: 16px;
+            border-radius: 8px;
+        }
+
+        .player-1-card {
+            background-color: #eff6ff; /* blue-50 */
+        }
+
+        .player-2-card {
+            background-color: #fee2e2; /* red-50 */
+        }
+
+        .player-card label {
+            display: block;
+            font-size: 0.875rem; /* 14px */
+            font-weight: 500;
+            color: #475569; /* slate-600 */
+            margin-bottom: 4px;
+        }
+
+        .player-card input {
+            width: 100%;
+            text-align: center;
+            padding: 8px;
+            border: 1px solid #cbd5e1; /* slate-300 */
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        .player-card input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #3b82f6; /* ring-blue-500 */
+        }
+        
+        .player-2-card input:focus {
+             box-shadow: 0 0 0 2px #ef4444; /* ring-red-500 */
+        }
+
+        .score {
+            font-size: 1.875rem; /* 30px */
+            font-weight: 700;
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+
+        #score1 {
+            color: #2563eb; /* blue-600 */
+        }
+
+        #score2 {
+            color: #dc2626; /* red-600 */
+        }
+
+        /* Tic Tac Toe Grid */
+        .boxes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            aspect-ratio: 1 / 1;
+        }
+
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.75rem; /* 60px */
+            font-weight: 700;
+            color: #334155; /* slate-700 */
+            background-color: rgba(226, 232, 240, 0.6); /* slate-200/60 */
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .box:hover {
+            background-color: #f0f9ff; /* A very light blue */
+        }
+
+        /* Responsive adjustments for larger screens */
+        @media (min-width: 640px) {
+            main {
+                padding: 32px;
+            }
+            h1 {
+                font-size: 3rem; /* 48px */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <!-- Game Title -->
+        <h1>Tic Tac Toe</h1>
+
+        <!-- Player Information & Scores -->
+        <div class="player-section">
+            <!-- Player 1 -->
+            <div class="player-card player-1-card">
+                <label for="player1">Player 1 (X)</label>
+                <input type="text" id="player1" name="player1" placeholder="Enter Name">
+                <p class="score" id="score1">0</p>
+            </div>
+
+            <!-- Player 2 -->
+            <div class="player-card player-2-card">
+                <label for="player2">Player 2 (O)</label>
+                <input type="text" id="player2" name="player2" placeholder="Enter Name">
+                <p class="score" id="score2">0</p>
+            </div>
+        </div>
+
+        <!-- Tic Tac Toe Grid -->
+        <div class="boxes">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+    </main><script src="Tic-Tac-Toe.js"></script>
+</body>
+</html>
+
